@@ -35,7 +35,6 @@ function clap(startNum, endNum){
     }
     return "Done";
 }
-//-------------------
 function addMeUp(num01, num02){
     let total = num01 + num02; //expressions
     console.log("all my work is done")
