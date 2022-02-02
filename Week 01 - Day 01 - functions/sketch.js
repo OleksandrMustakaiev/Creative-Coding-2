@@ -1,4 +1,3 @@
-//let distance = 23;
 //-------------------
 let boxWidth = 10;
 let boxHeight = 500;
@@ -13,11 +12,13 @@ function setup(){
 }
 
 function draw(){
-    drawBoxes();
+    drawBoxes(10,100,5,0,0); //parameters = boxWidth, boxHeight, spacing, xOffset, yOffset
+    drawBoxes(15,100,5,0,150);
+    drawBoxes(20,100,5,0,300);
 }
 
-function drawBoxes(){
-    fill(255,0,0);
+function drawBoxes(boxWidth, boxHeight, spacing, xOffset, yOffset){
+    fill(150,200,0);
     noStroke();
     for(let i=0; i<numBoxes; i++){
         let totalSpace = boxWidth+spacing;
