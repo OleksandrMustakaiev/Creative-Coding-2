@@ -35,13 +35,13 @@ class HorBarChart{
         this.calculateMaxValue();
     }
 
-    updateValues(){
+    updateValues(){ //some calculating, to get tick spacing, available height and bar height
         this.tickSpacing = this.chartWidth / this.numTicks; //space between ticks on  the left 
         this.availableHeight = this.chartHeight - (this.margin * 2) - (this.spacing * (this.data.length - 1)); //available space for bars
         this.barHeight = this.availableHeight / this.data.length; //bar Height
     }
 
-    calculateMaxValue(){
+    calculateMaxValue(){ //to calculate maximum value from data, to have maximum value in tick numbers
         let listValues = this.data.map(function(x) {return x.total});
         this.maxValue = max(listValues);
         this.tickIncrements = (this.maxValue / this.numTicks);
@@ -49,7 +49,7 @@ class HorBarChart{
     
 
 
-    render(){
+    render(){ //to render object by calling funcions
     push()
     translate(this.posX, this.posY);
     this.drawAxis();

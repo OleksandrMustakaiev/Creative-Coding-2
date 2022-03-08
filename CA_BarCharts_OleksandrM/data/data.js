@@ -18,7 +18,7 @@ let table03;
 let fontTitle;
 let fontRoboto;
 
-function preload() {
+function preload() { //to pre load other files such as .csv for data and .ttf for font
     fontTitle = loadFont('font/Roboto/Roboto-BoldItalic.ttf'); //font
     fontRoboto = loadFont('font/Roboto/Roboto-Bold.ttf') //font
     table = loadTable('data/dataHorizontalBarChart/dataHorBarChart.csv', 'csv', 'header'); //Horizontal Bar Chart Data
@@ -35,7 +35,6 @@ function generateData() {
     for (let i = 0; i < dataHorBarChart.length; i++) {
         dataHorBarChart[i].total = int(dataHorBarChart[i].total)
     }
-
 
     //Line Chart Data
     for (let r = 0; r < table01.getRowCount(); r++) {

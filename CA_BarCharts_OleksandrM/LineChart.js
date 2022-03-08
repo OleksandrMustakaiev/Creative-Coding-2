@@ -1,4 +1,4 @@
-class LineChart{
+class LineChart{ //object
     constructor(_data){
         this.data = _data;
 
@@ -27,9 +27,6 @@ class LineChart{
         this.barHeight;
         this.availableHeight;
 
-
-        this.showValues = true; //show/hide values above each bar chart
-        this.rotateLabels = false; //rotate values
         this.showLabels = true; //show/hide name of each bar chart
         this.showLegend = true; //show/hide legend
 
@@ -39,13 +36,13 @@ class LineChart{
         this.calculateMaxValue();
     }
 
-    updateValues(){
+    updateValues(){ //some calculating, to get tick spacing, available width and bar width
         this.tickSpacing = this.chartHeight / this.numTicks; //space between ticks on  the left 
         this.availableWidth = this.chartWidth - (this.margin * 2) - (this.spacing * (this.data.length - 1)); //available space for bars
         this.barWidth = this.availableWidth / this.data.length; //bar width
     }
 
-    calculateMaxValue(){
+    calculateMaxValue(){ //to calculate maximum value from data, to have maximum value in tick numbers
         let listValues = this.data.map(function(x) {return x.total});
         this.maxValue = max(listValues);
         this.tickIncrements = (this.maxValue / this.numTicks);
@@ -53,7 +50,7 @@ class LineChart{
     
 
 
-    render(){
+    render(){ //to render object by calling funcions
     push()
     translate(this.posX, this.posY);
     this.drawAxis();
